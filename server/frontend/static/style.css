@@ -124,3 +124,100 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.container-contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: white;
+    width: 80%;
+    height: 800px;
+    margin-bottom: 10px;
+    margin: 30px auto;
+    border-radius: 50px;
+    padding: 30px;
+    box-shadow: 3px 5px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ccc;
+    text-align: center;
+}
+
+.car-img-section {
+    text-align:center;
+}
+
+.car-img-section img {
+    width: 60%;
+    border-radius: 3px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.horizontal-divider {
+    border-top: 2px solid #e0e0e0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 80%;
+    margin: 50px auto;
+    padding-top: 10px;
+}
+
+.contact-icon {
+    width: 300px;
+    height: 300px;
+    margin-right: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+}
+
+.vertical-divider {
+    border-left: 3px solid #181818;
+    height: 300px;
+    text-align: center; 
+    background-color: #ccc;
+}
+
+.contact-information {
+    Margin-left: 230px;
+    text-align: center;   
+    color: #007bff;
+    font-size: 14px;
+    line-height: 0.9;
+}
+
+.contact-item {
+    margin: 0px;
+}
+
+.contact-label {
+    color: #6b9ce8;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 0.9;
+    margin-bottom: 7px;
+}
+
+.contact-value {
+    color: #6b9ce8;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
