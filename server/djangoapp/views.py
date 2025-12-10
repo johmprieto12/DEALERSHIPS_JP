@@ -11,15 +11,14 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
+from .models import CarMake, CarModel
 
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
 
-# Create your views here.
-
-# login_request
+# Login_request
 @csrf_exempt
 def login_user(request):
     data = json.loads(request.body)
@@ -32,13 +31,13 @@ def login_user(request):
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
 
-# logout_request
+# Logout_request
 def logout_request(request):
     logout(request)
     data = {"userName":""}
     return JsonResponse(data)
 
-# registration
+# Registration
 @csrf_exempt
 def registration(request):
     context = {}
@@ -64,7 +63,19 @@ def registration(request):
         data = {"userName":username,"error":"Already Registered"}
         return JsonResponse(data)
 
-# # Update the `get_dealerships` view to render the index page with
+# Get_cars
+def get_cars(request):
+    count = CarMake.objects.filter().count()
+    print(count)
+    if(count == 0):
+        initiate()
+    car_models = CarModel.objects.select_related('car_make')
+    cars = []
+    for car_model in car_models:
+        cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
+    return JsonResponse({"CarModels":cars})
+
+
 # a list of dealerships
 # def get_dealerships(request):
 # ...
