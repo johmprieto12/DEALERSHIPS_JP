@@ -70,7 +70,7 @@ return (
         <Header/>
         <div style={{marginTop:"10px"}}>
         <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
-        <h4  style={{color:"grey"}}>,{dealer['address']}, {dealer['city']}, {dealer['state']}, {dealer['zip']} </h4>
+        <h4  style={{color:"grey"}}>{dealer['address']}, {dealer['city']}, {dealer['state']}, {dealer['zip']} </h4>
         </div>
         <div className="reviews_panel">
         {reviews.length === 0 && unreviewed === false ? (
