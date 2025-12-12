@@ -9,11 +9,11 @@ const Dealers = () => {
 
     let [states, setStates] = useState([])
   
-    let dealer_url ="/djangoapp/get_dealers";
-    let dealer_url_by_state = "/djangoapp/get_dealers";
+    let dealer_url ="/djangoapp/get_dealers/";
+    let dealer_url_by_state = "/djangoapp/get_dealers/";
  
     const filterDealers = async (state) => {
-        dealer_url_by_state = dealer_url_by_state + state;
+        dealer_url_by_state = dealer_url_by_state+state;
         const res = await fetch(dealer_url_by_state, {
             method: "GET"
         });
@@ -59,7 +59,7 @@ return(
             <th>Zip</th>
             <th>
             <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
-                <option value="" selected disabled hidden>State</option>
+                <option value="" disabled hidden>State</option>
                 <option value="All">All States</option>
                 {states.map(state => (
                     <option value={state}>{state}</option>
@@ -86,7 +86,7 @@ return(
                     }
                 </tr>
             ))}
-        </table>;
+        </table>
     </div>
 )
 }
